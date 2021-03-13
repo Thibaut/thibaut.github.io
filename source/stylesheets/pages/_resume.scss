@@ -1,0 +1,130 @@
+.resume {
+  background: white;
+
+  ul { list-style: disc outside; }
+  li + li { margin-top: .25em; }
+
+  a {
+    color: inherit;
+    border: 0;
+
+    &:focus, &:hover {
+      color: $linkColor;
+      text-decoration: underline;
+    }
+  }
+}
+
+.resume-header {
+  height: 3.25em;
+  line-height: 3.25em;
+  margin-bottom: 2.5em;
+  padding: .375em 0;
+  border-bottom: 2px solid $green;
+}
+
+.resume-title {
+  float: left;
+  line-height: inherit;
+  margin: 0;
+
+  > small {
+    margin-left: .5em;
+    font-family: $baseFont;
+    font-size: 1rem;
+    font-weight: normal;
+    color: $textColorLight;
+  }
+}
+
+.resume-links {
+  float: right;
+  line-height: 1.625em;
+
+  > a { display: block; }
+}
+
+.resume-heading { font-size: 1.25em; }
+
+.resume-page-header {
+  display: none;
+  height: 1.75em;
+  line-height: 1.75em;
+  padding: .25em 0;
+  page-break-before: always;
+  border-bottom-width: 1px;
+
+  > .resume-title { font-size: 1em; }
+
+  > .resume-links {
+    line-height: inherit;
+    padding: 0;
+    font-size: .875em;
+  }
+}
+
+.resume-date {
+  font-size: .875em;
+  color: $textColorLight;
+  text-align: right;
+}
+
+.timeline {
+  line-height: 1.5em;
+
+  > li {
+    margin: 0;
+
+    + li { margin-top: .75em; }
+    > p { margin-bottom: 0; }
+  }
+}
+
+.timeline-date {
+  float: left;
+  max-width: 8rem;
+  color: $textColorLight;
+
+  ~ p { margin-left: 9rem; }
+}
+
+.timeline-note {
+  font-size: .875em;
+  color: $textColorLight;
+}
+
+@media screen and #{$mediumScreen} {
+  html { font-size: .9375em; }
+  .resume ul { list-style: none; }
+
+  .resume-header {
+    margin-bottom: 2em;
+    padding: .5em 0;
+  }
+
+  .resume-title { font-size: 1.25em; }
+  .resume-heading { font-size: 1.2em; }
+}
+
+@media screen and #{$smallScreen} {
+  html { font-size: .875em; }
+
+  .resume-header {
+    line-height: 1.625em;
+    padding-top: .75em;
+  }
+
+  .resume-title > small {
+    display: block;
+    margin-left: 0;
+  }
+
+  .timeline-date { max-width: 7rem; }
+  .timeline-date ~ p { margin-left: 7.5rem; }
+}
+
+@media print {
+  html { font-size: 12pt; }
+  .resume-page-header { display: block; }
+  .resume-date { display: none; }
+}

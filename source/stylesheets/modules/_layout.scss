@@ -1,0 +1,10 @@
+.row {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  max-width: $siteWidth;
+  overflow: hidden;
+  @include box-sizing(border-box);
+
+  @media #{$smallScreen} { padding: 0 1em; }
+}

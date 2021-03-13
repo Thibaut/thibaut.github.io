@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thibaut Courouble&rsquo;s Résumé</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <% if development? %><link href="<%= asset_path :css, :resume %>" media="all" rel="stylesheet" type="text/css">
+  <% else %><style>
+<%= File.read 'build' + asset_path(:css, :resume) %><%= "\n" %>
+  </style><% end %>
+  <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
+</head>
+<body class="resume">
+  <section class="row">
+    <header class="resume-header">
+      <h1 class="resume-title">Thibaut Courouble <small>Developer Lead</small></h1>
+      <div class="resume-links">
+        <a href="https://thibaut.me"><strong>https://thibaut.me</strong></a>
+        <a href="mailto:thibaut@me.com">thibaut@me.com</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="resume-heading">Technical Skills</h2>
+      <ul>
+        <li><strong>Ruby</strong>, Ruby on Rails, Rack, Sinatra, testing frameworks</li>
+        <li><strong>JavaScript</strong>, CoffeeScript, libraries like jQuery and Backbone</li>
+        <li><strong>HTML5</strong> and related APIs, DOM, HTTP</li>
+        <li><strong>CSS</strong> (including CSS3), Sass, user interface design, responsive web design</li>
+        <li>MySQL, Redis, Memcached, Git, UNIX commands, and more</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="resume-heading">Work Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="timeline-date">May&nbsp;2015&ndash;<br>Present</p>
+          <p><strong>Developer Lead</strong>, Shopify Inc.</p>
+          <p class="timeline-note">
+            Tech &amp; product lead of one of the company's most important projects<br>
+            Managing people, cross-team communication, hiring, etc.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">Jan&nbsp;2014&ndash;Apr 2015</p>
+          <p><strong>Software Developer</strong>, Shopify Inc.</p>
+          <p class="timeline-note">
+            Worked on all aspects of Shopify Core: backend, frontend, performance, etc.<br>
+            Major impact on Admin Next (JS MVC &rarr; Rails) and Storefront Editor projects
+          </p>
+        </li>
+
+        <li>
+          <p class="timeline-date">Dec&nbsp;2010&ndash;Dec 2013</p>
+          <p><strong>Freelance Developer and Entrepreneur</strong></p>
+          <p class="timeline-note">
+            Designed, coded, and deployed four web applications<br>
+            Sold code to hundreds of happy customers
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">Mar&ndash;Nov 2010</p>
+          <p><strong>Cofounder</strong>, Teamly Ltd.</p>
+          <p class="timeline-note">
+            Created a SaaS application used by tens of thousands of users<br>
+            Left to follow my passion and pursue my own vision
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">May&nbsp;2009&ndash;<br>Feb 2010</p>
+          <p><strong>Founder</strong>, Nixint LLC</p>
+          <p class="timeline-note">
+            Built and shipped two SaaS applications<br>
+            Closed to pursue Teamly Ltd
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">May&ndash;Sep 2008</p>
+          <p><strong>Salesman</strong>, Fnac</p>
+          <p class="timeline-note">
+            Sold computer software and hardware at Fnac Aix-en-Provence<br>
+            <!-- Additional short-term contracts throughout 2008 and 2009 -->
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">June&ndash;Sep 2007</p>
+          <p><strong>Blogger and Developer</strong>, SICESI SARL</p>
+          <p class="timeline-note">
+            Wrote tech articles + helped build laptop database and comparison tool
+            <!-- Tech news and reviews for <a href="http://www.laptopspirit.fr">LaptopSpirit.fr</a><br>
+            Helped build laptop database and comparison tool <a href="http://www.prix-portables.fr">Prix-Portables.fr</a> -->
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <header class="resume-header resume-page-header">
+      <h1 class="resume-title">Thibaut Courouble</h1>
+      <div class="resume-links">
+        <a href="https://thibaut.me">https://thibaut.me</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="resume-heading"><a href="https://thibaut.me/projects/">Selected Projects</a></h2>
+      <ol class="timeline">
+        <li>
+          <p class="timeline-date">2013&ndash;Present</p>
+          <p><a href="https://devdocs.io"><strong>DevDocs</strong></a></p>
+          <p class="timeline-note">
+            Open source API documentation browser with offline mode and instant search.
+            Used by 50,000+ developers monthly.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2011&ndash;2016</p>
+          <p><a href="https://thibaut.me/projects/#cssflow"><strong>CSSFlow</strong></a></p>
+          <p class="timeline-note">
+            Collection of free UI elements and paying UI kits coded with HTML &amp; CSS.<br>
+            Responsive website that receives over 250,000 monthly page views.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2012&ndash;2013</p>
+          <p><a href="https://thibaut.me/projects/#timepad"><strong>TimePad</strong></a></p>
+          <p class="timeline-note">
+            Single-page time-tracking app with private API, complete offline support with
+            synchronization and privacy protection, charts, keyboard shortcuts, etc.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2011</p>
+          <p><a href="https://thibaut.me/projects/#socially"><strong>Socially</strong></a></p>
+          <p class="timeline-note">
+            Private social network with real-time group messaging, friend lists, unread counts,
+            privacy&nbsp;&amp;&nbsp;security features, caching, background jobs, etc.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2011</p>
+          <p><a href="https://thibaut.me/projects/#atfamily"><strong>AtFamily</strong></a></p>
+          <p class="timeline-note">
+            Private social network for families with instant messaging, online status, event
+            calendar, photo sharing, etc.
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2010</p>
+          <p><a href="https://thibaut.me/projects/#teamly"><strong>Teamly</strong></a></p>
+          <p class="timeline-note">
+            Priority management app with team hierarchy, permissions, charts, printable reports,
+            test-driven development, etc.<br>
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2010</p>
+          <p><a href="https://thibaut.me/projects/#teamly-chat"><strong>Teamly Chat</strong></a></p>
+          <p class="timeline-note">
+            Collaboration app with real-time chat, task &amp; file sharing, mentions, search, etc.<br>
+          </p>
+        </li>
+        <li>
+          <p class="timeline-date">2009</p>
+          <p><a href="https://thibaut.me/projects/#widea"><strong>Widea</strong></a></p>
+          <p class="timeline-note">
+            Idea management app with inline editing, PDF exports, sharing, activity feed, etc.<br>
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="resume-heading">Education</h2>
+      <ol class="timeline">
+        <li>
+          <p class="timeline-date">2010</p>
+          <p>License in Computer Science—dropped out midyear</p>
+        </li>
+        <li>
+          <p class="timeline-date">2009</p>
+          <p><strong>DEUG in Mathematics and Computer Science</strong></p>
+          <p class="timeline-note">Paul Cézanne University (two-year undergraduate degree)</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- <section>
+      <h2 class="resume-heading">Languages</h2>
+      <ul>
+        <li><strong>French:</strong> Native</li>
+        <li><strong>English:</strong> Proficient</li>
+      </ul>
+    </section> -->
+
+    <p class="resume-date">
+      <time datetime="2015-09-15" pubdate>Updated September 2015</time>
+    </p>
+  </section>
+  <% unless development? %><script>
+    var _gaq=[['_setAccount','UA-5544833-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script><% end %>
+</body>
+</html>

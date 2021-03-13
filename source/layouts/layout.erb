@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html class="old-ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title><%= "#{current_page.data.title} | " unless current_page.data.title.blank? %>Thibaut Courouble</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <% if current_path == 'index.html' %><meta name="description" content="Hi — I'm Thibaut. I'm a French web developer who specialize in Ruby, JavaScript and HTML5."><% end %>
+  <link href="<%= asset_path :css, :main %>" media="all" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="<%= data.config.base_url %>/<%= current_path.gsub('index.html', '') %>">
+  <link href="https://feeds.feedburner.com/thibautme" rel="alternate" title="Subscribe" type="application/atom+xml">
+  <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
+</head>
+<body class="noscript <%= page_classes %>">
+  <header class="header" id="top">
+    <nav class="row">
+      <%= link_to 'Thibaut Courouble', '/', class: 'header-title' %>
+      <div class="header-menu">
+        <%= link_to 'About', '/', class: "header-link#{' active' if current_path == 'index.html'}" %>
+        <%= link_to 'Projects', '/projects.html', class: "header-link#{' active' if current_path.start_with? 'projects'}" %>
+        <%= link_to 'Articles', '/articles.html', class: "header-link#{' active' if current_path =~ /\A(articles)|(positive)|(mission)/}" %>
+        <%= link_to 'Books', '/books.html', class: "header-link#{' active' if current_path.start_with? 'books'}" %>
+      </div>
+    </nav>
+  </header>
+  <section class="content">
+    <div class="row">
+      <%= yield %>
+      <a href="#top" class="top">Back to Top</a>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="row">
+      <p class="footer-copy">&copy; 2010&ndash;<%= Time.now.year %> Thibaut Courouble</p>
+      <p class="footer-links">
+        <a href="mailto:thibaut@me.com" class="footer-link">Email</a>
+        <a href="https://twitter.com/tibc" class="footer-link footer-twi">Twitter</a>
+        <a href="https://github.com/Thibaut" class="footer-link footer-git">GitHub</a>
+        <a href="https://feeds.feedburner.com/thibautme" class="footer-link footer-rss">RSS</a>
+      </p>
+    </div>
+  </footer>
+  <script src="<%= asset_path :js, :main %>"></script>
+  <% unless development? %><script>
+    var _gaq=[['_setAccount','UA-5544833-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script><% end %>
+  <!--[if lte IE 8]><p>This website doesn't work with your version of Internet Explorer. Sorry.</p><![endif]-->
+</body>
+</html>

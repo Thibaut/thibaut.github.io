@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- Hi there! How's it going? ;) -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thibaut &lt;3 Shopify</title>
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <% if development? %><link href="<%= asset_path :css, :shopify %>" media="all" rel="stylesheet" type="text/css">
+  <% else %><style>
+<%= File.read 'build' + asset_path(:css, :shopify) %><%= "\n" %>
+  </style><% end %>
+  <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
+</head>
+<body class="noscript shopify">
+  <div class="topbar">
+    <div class="row">
+      <p class="right">Shopify is an amazing team — you should <a href="https://www.shopify.com/careers">apply</a> :)</p>
+      <p class="left">June 2013</p>
+    </div>
+  </div>
+  <header class="header" id="top">
+    <div class="row">
+      <nav class="header-links">
+        <a href="https://thibaut.me" class="header-link">Blog</a>
+        <a href="https://thibaut.me/projects/" class="header-link">Portfolio</a>
+        <a href="https://thibaut.me/resume/" class="header-link">Résumé</a>
+      </nav>
+      <p class="header-title">To the Shopify team:</p>
+    </div>
+  </header>
+  <section class="content">
+    <div class="row">
+      <div class="about">
+        <span class="about-image" data-alt="Yep, that's me!">
+          <%= image_tag 'me_old.jpg' %>
+        </span>
+      </div>
+
+      <div class="intro">
+        <h1>Hi, I&rsquo;m Thibaut.</h1>
+        <p>
+          I&rsquo;m a French developer passionate about building web
+          applications that improve people&rsquo;s lives. I think you&rsquo;re
+          creating some of the most influential and innovative software on
+          Earth.<br>
+          I&rsquo;d love to join your team.
+        </p>
+      </div>
+
+      <section>
+        <h2>What&rsquo;s special about me</h2>
+        <p>
+          From <a href="https://thibaut.me/projects/#socially">social networks</a>
+          to <a href="https://thibaut.me/projects#timepad">productivity apps</a> and
+          <a href="https://devdocs.io">developer tools</a>, I have a lot of
+          experience creating complex web applications using Ruby and
+          JavaScript. I also care about design: my <a href="https://thibaut.me/projects/#cssflow">CSS snippets</a>
+          are a popular resource among developers and regularly featured in the
+          media.
+        </p>
+        <p>
+          Having sold <a href="https://thibaut.me/projects/#cssflow">UI kits</a> to
+          hundreds of developers, I understand how challenging it is to make a
+          sale, along with the deep satisfaction that comes with making your
+          customers happy. This made me realize the full extent of the change
+          ecommerce is bringing to the world.
+        </p>
+        <p>
+          I believe in living responsibly, following one&rsquo;s passion, and
+          persevering in the face of obstacles. In my free time, I like to play
+          and read. There are a million things I want to try, to learn, to be
+          better at.
+        </p>
+      </section>
+
+      <section>
+        <h2>What&rsquo;s special about you</h2>
+        <p>
+          Your open source contributions are making the web a better place and
+          have been a huge inspiration to me since 2007, when I started
+          programming with Ruby. I also like how you&rsquo;re continuously
+          defying the status quo, creating trends instead of following them.
+        </p>
+        <p>
+          You strive for excellence. Did I mention I&rsquo;m a perfectionist?
+          I care deeply about code readability and efficiency, in addition to
+          making elegant and intuitive software. You don&rsquo;t compromise on
+          quality. I wouldn&rsquo;t have it any other way.
+        </p>
+        <p>
+          You work together as a team in a friendly environment that spurs
+          creativity. I love that every one of you owns a piece of Shopify.
+          I think it&rsquo;s essential to a company&rsquo;s success.
+          In&nbsp;the end, I&nbsp;don&rsquo;t want to come work for you—I want
+          to work <em>with</em> you.
+        </p>
+      </section>
+
+      <section>
+        <h2>Things I&rsquo;m proud to have built</h2>
+        <div class="gallery">
+          <div class="gallery-list">
+            <%= link_to image_tag('projects/devdocs/app.png', class: 'gallery-image'), asset_path(:images, 'projects/devdocs/app.png'), class: 'gallery-item', 'data-caption' => 'An API documentation reader that launched a few days ago (30k unique visitors)' %>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/timepad/entries-current.png' %>" data-caption="A single-page time-tracking app that works offline and syncs with a private API"></div>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/cssflow/home_old.png' %>" data-caption="A fully responsive website that receives over 250,000 monthly page views"></div>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/socially/home.png' %>" data-caption="A private social network with real-time group messaging"></div>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/teamly/priorities.png' %>" data-caption="A priority management app used by thousands of users"></div>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/teamly-chat/tasks.png' %>" data-caption="A single-page team collaboration app with real-time chat, tasks, and file sharing"></div>
+            <div class="gallery-item" data-src="<%= asset_path :images, 'projects/widea/idea.png' %>" data-caption="An idea management app with subscription-based billing"></div>
+          </div>
+          <div class="gallery-bar"></div>
+          <noscript class="gallery-noscript"><p>Turn on JavaScript to view 6 more screenshots.</p></noscript>
+        </div>
+        <p>
+          You can see the complete list and more screenshots on
+          <a href="https://thibaut.me/projects/">my website</a>.<br>
+          My latest project is a <a href="https://devdocs.io">documentation reader</a>
+          (screenshot above). Although I haven't yet open-sourced it, feel free
+          to take a look at <a href="https://github.com/Thibaut/devdocs">the code</a>. It
+          has a fully automated Ruby scraper, tests, and a CoffeeScript
+          front-end that uses no external libraries.
+        </p>
+      </section>
+
+      <section>
+        <h2>Things I&rsquo;d be proud to build with you</h2>
+        <ul>
+          <li>
+            <strong>Batman.js</strong><br>
+            Both Ruby and Rails redefined the meaning of developer happiness
+            and productivity. I&nbsp;believe in extending that vision to the
+            client-side and would love to contribute to Batman.js.
+          </li>
+          <li>
+            <strong>A revamped theme store</strong><br>
+            A beautiful design is one of the major selling points of an online
+            store builder. I think Shopify&rsquo;s theme gallery could be
+            improved, and features like a live theme preview (of the
+            customer&rsquo;s own store) might help sell even more themes.
+          </li>
+          <li>
+            <strong>A better editing interface</strong><br>
+            I think putting the editor right within the storefront would make
+            it easier to see how the content fits within the overall design of
+            the page. Likewise, the theme editor and live preview could be
+            combined into a panel-based interface that provides instant feedback.
+          </li>
+        </ul>
+        <p>
+          Finally, I should warn you that I would push for making all Shopify
+          websites &ldquo;Retina-ready&rdquo;.
+        </p>
+      </section>
+
+      <p>
+        <strong>
+          Thanks for reading.
+          I hope we can get to know each other very soon.
+        </strong><br>
+        — Thibaut
+      </p>
+
+      <p class="ps">
+        PS: I happen to have recently landed in Ottawa—my first time in Canada.<br>
+        This may or may not be a coincidence. ;)
+      </p>
+
+      <a href="#top" class="top">Back to top</a>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="row">
+      <p>
+        <a href="mailto:thibaut@me.com">thibaut@me.com</a> —
+        <a href="https://thibaut.me">https://thibaut.me</a> —
+        <a href="https://github.com/Thibaut">github.com/thibaut</a>
+      </p>
+    </div>
+  </footer>
+  <% if development? %><script src="<%= asset_path :js, :main %>"></script><% else %>
+  <script>
+    <%= File.read 'build' + asset_path(:js, :main) %>
+  </script><% end %>
+  <% unless development? %><script>
+    var _gaq=[['_setAccount','UA-5544833-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script><% end %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.pagination {
+  position: relative;
+  margin: 2em 0 1em;
+  line-height: 2.25em;
+  text-align: center;
+  overflow: hidden;
+
+  > a {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 1em;
+    color: $textColorLight;
+    background: $lightGray;
+    border: 0;
+    border-radius: 2px;
+
+    &:hover, &:focus {
+      color: white;
+      background: $blue;
+    }
+  }
+
+  > .prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  > .next {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @media #{$smallScreen} {
+    > a {
+      width: 5.5em;
+      height: 2.25em;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+      word-spacing: 5.5em;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.about {
+  float: right;
+  margin-left: 1.5em;
+}
+
+.about-image {
+  display: block;
+  margin-bottom: .5em;
+
+  > img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 10em;
+    border-radius: 2px;
+
+    @media #{$mediumScreen} { width: 8em; }
+    @media #{$smallScreen} { width: 6em; }
+  }
+
+  &:after {
+    content: attr(data-alt);
+    position: relative;
+    display: block;
+    top: -2em;
+    color: $textColorLight;
+    text-align: center;
+    opacity: 0;
+    @include transition(.2s ease-out);
+
+    @media #{$smallScreen} { content: none; }
+  }
+
+  &:hover:after {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.about-link {
+  display: block;
+  line-height: 2em;
+  padding: 0 1em;
+  color: white;
+  text-align: center;
+  background: $blue;
+  border: 0;
+  border-radius: 2px;
+
+  &:hover, &:focus { background: $green; }
+}

@@ -1,0 +1,56 @@
+.footer {
+  padding: 1em 0;
+  line-height: 2em;
+  color: #777;
+
+  p { margin: 0; }
+}
+
+.footer-copy { float: left; }
+.footer-links { float: right; }
+
+.footer-link {
+  float: left;
+  padding: 0 .7em;
+  font-family: $altFont;
+  font-size: .875em;
+  font-weight: bold;
+  color: white;
+  background: $yellow;
+  border: 0;
+  border-radius: 2px;
+
+  &:hover, &:focus { background: $green; }
+
+  & + & {
+    margin-left: 1em;
+    margin-left: 1rem;
+  }
+}
+
+.footer-twi { background: $twitterColor; }
+.footer-git { background: $githubColor; }
+.footer-rss { background: $rssColor; }
+
+@media #{$mediumScreen} {
+  .footer { text-align: center; }
+  .footer p + p { margin-top: 1em; }
+  .footer-copy, .footer-links { float: none; }
+  .footer-copy { line-height: 1.5em; }
+
+  .footer-link {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+@media #{$smallScreen} {
+  .footer { padding: .75em 0; }
+  .footer p + p { margin-top: .75em; }
+
+  .footer-link + .footer-link {
+    margin-left: .5em;
+    margin-left: .5rem;
+  }
+}

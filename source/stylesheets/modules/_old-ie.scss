@@ -1,0 +1,13 @@
+.old-ie {
+  overflow: hidden;
+
+  body { overflow: hidden; }
+  body * { display: none; }
+
+  p {
+    display: block;
+    margin: 50px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+}

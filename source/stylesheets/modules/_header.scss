@@ -1,0 +1,84 @@
+.header {
+  overflow: hidden;
+  line-height: 4.25em;
+  color: white;
+  text-align: center;
+  background: $headerBackground;
+
+  > .row { padding: 0; }
+}
+
+%header-item {
+  float: left;
+  padding: 0 1.5em;
+  padding: 0 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  @include box-sizing(border-box);
+}
+
+.header-link {
+  position: relative;
+  font-size: 1.125em;
+  border: 0;
+  @extend %header-item;
+
+  &:hover, &:focus { background: rgba(white, .2); }
+
+  &.active:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-bottom-color: white;
+    pointer-events: none;
+  }
+
+  @media #{$smallScreen} {
+    &.active { font-weight: bold; }
+    &.active:before { content: none; }
+  }
+}
+
+.header-title {
+  margin: 0;
+  font-family: $altFont;
+  font-size: 1.375em;
+  font-weight: bold;
+  border: 0;
+  @extend %header-item;
+}
+
+.header-menu {
+  float: right;
+  overflow: hidden;
+}
+
+@media #{$mediumScreen} {
+  .header { line-height: 3em; }
+  .header > .row { max-width: none; }
+  .header-menu { float: none; }
+
+  .header-menu > .header-link { width: 25%; }
+
+  .header-title {
+    float: none;
+    display: block;
+  }
+}
+
+@media #{$smallScreen} {
+  .header { padding-bottom: .5em; }
+
+  .header-menu > .header-link {
+    width: 50%;
+    font-size: 1em;
+    line-height: 2.5em;
+  }
+
+  .header-title { font-size: 1.25em; }
+}

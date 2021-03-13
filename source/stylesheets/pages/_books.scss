@@ -1,0 +1,14 @@
+.books {
+  ul { margin-bottom: 2em; }
+
+  li {
+    line-height: 1.625em;
+    font-size: .875em;
+    color: $textColorLight;
+
+    > a {
+      font-size: 1.14em;
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.featured-articles {
+  overflow: hidden;
+  margin: 1.5em 0;
+  line-height: 2.75em;
+
+  > li {
+    float: left;
+    width: 30%;
+    margin: 0;
+
+    + li { margin-left: 5%; }
+
+    &:first-child > a { background: $yellow; }
+    &:last-child > a { background: $cyan; }
+
+    > a {
+      display: block;
+      padding: 0 1em;
+      color: white;
+      text-align: center;
+      background: $green;
+      border: 0;
+      border-radius: 2px;
+
+      &:hover, &:focus { background: $blue; }
+    }
+  }
+
+  @media #{$mediumScreen} {
+    line-height: 2.25em;
+
+    > li {
+      float: none;
+      width: auto;
+
+      + li { margin: 1em 0 0; }
+    }
+  }
+}
+
+.articles-list {
+  > li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    > span {
+      float: right;
+      position: relative;
+      padding-left: 2em;
+      line-height: 2.25;
+      font-size: .875em;
+      color: $textColorLight;
+      background: white;
+    }
+
+    + li { margin-top: .25em; }
+  }
+}

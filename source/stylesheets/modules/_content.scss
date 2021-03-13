@@ -1,0 +1,21 @@
+.content {
+  background: $contentBackground;
+  padding: 1.75em 0 1em;
+
+  section { margin-bottom: 2em; }
+
+  @media #{$smallScreen} { padding-top: 1.25em; }
+}
+
+.top {
+  display: none;
+  margin-top: 1em;
+  color: white;
+  line-height: 2em;
+  text-align: center;
+  background: $green;
+  border: 0;
+  border-radius: 2px;
+
+  @media #{$smallScreen} { display: block; }
+}

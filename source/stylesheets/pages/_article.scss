@@ -1,0 +1,8 @@
+.article-time {
+  display: block;
+  margin-top: 2em;
+  color: $textColorLight;
+  text-align: right;
+
+  @media #{$smallScreen} { font-size: .875em; }
+}

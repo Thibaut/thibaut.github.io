@@ -1,0 +1,247 @@
+.gallery {
+  position: relative;
+  line-height: 2em;
+  margin-bottom: 2.5em;
+  color: $textColorLight;
+  text-align: center;
+}
+
+.gallery-list {
+  position: relative;
+  overflow: hidden;
+  height: 22em;
+  margin: 0;
+}
+
+.gallery-item {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  border: 0;
+  cursor: default;
+  -webkit-padding-end: 2px;
+  @include box-sizing(border-box);
+  @include transition(left .4s);
+
+  &.current,
+  &.prev,
+  &.next {
+    display: block;
+  }
+
+  &.prev,
+  &.next {
+    position: absolute;
+    top: 0;
+  }
+
+  &.next,
+  &.current.right {
+    left: 100%;
+  }
+
+  &.prev,
+  &.current.left {
+    left: -100%;
+  }
+
+  &.current,
+  &.next.left,
+  &.prev.right {
+    left: 0;
+  }
+
+  &:before {
+    content: 'Loading\2026';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    line-height: 1;
+    margin-top: -.5em;
+    color: $textColorLight;
+  }
+
+  &::-webkit-scrollbar { width: 5px; }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
+
+@mixin opacity-gallery-item-transition {
+  @include transition(opacity .25s);
+
+  &.current.left,
+  &.current.right {
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  &.next,
+  &.prev {
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.gallery-image {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.gallery-bar {
+  margin-top: .5em;
+  background: $lightGray;
+  border-radius: 2px;
+
+  > a {
+    padding: 0 .75em;
+    border: 0;
+    border-radius: 2px;
+    @include user-select(none);
+  }
+}
+
+.gallery-prev,
+.gallery-next {
+  &:hover {
+    color: white;
+    background: $blue;
+  }
+}
+
+.gallery-prev { float: left; }
+.gallery-next { float: right; }
+
+.gallery-toggle, .gallery:after {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  background: rgba(#222, .75);
+  opacity: 0;
+  @include transition(opacity .2s);
+  -moz-transition: none;
+}
+
+.touch .gallery-toggle,
+.gallery:hover .gallery-toggle,
+.gallery:hover:after {
+  opacity: 1;
+}
+
+.gallery-toggle {
+  top: .5em;
+  right: .5em;
+  margin-right: 16px;
+  -webkit-margin-end: 7px;
+}
+
+.gallery:after {
+  bottom: 2.5em;
+  left: 0;
+  right: 0;
+  -webkit-margin-end: 7px;
+  padding: 0 1em;
+  border-radius: 0 0 2px 2px;
+}
+
+.gallery[data-caption]:after { content: attr(data-caption); }
+
+.gallery-fullscreen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1em 1em 4.5em;
+  line-height: 3.5em;
+  background: #333;
+  z-index: 20;
+
+  > .gallery-list { height: 100%; }
+
+  .gallery-item { @include opacity-gallery-item-transition; }
+
+  > .gallery-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-size: 1.25em;
+    color: #ccc;
+    background: #1b1b1b;
+    border-radius: 0;
+  }
+
+  .gallery-prev,
+  .gallery-next {
+    width: 25%;
+    color: white;
+    border-radius: 0;
+  }
+
+  .gallery-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 1em;
+    border-radius: 0 0 0 2px;
+    opacity: 1;
+  }
+
+  &:after {
+    margin: 0;
+    bottom: 2.8em; // 3.5rem
+    font-size: 1.25em;
+    background: inherit;
+    opacity: 1;
+  }
+
+  &[data-caption] { padding-bottom: 7em; }
+}
+
+.touch .gallery:not(.gallery-fullscreen):after { display: none; }
+
+@media #{$mediumScreen} {
+  .gallery-list,
+  .gallery-noscript > .gallery-item {
+    font-size: .75em;
+  }
+
+  .gallery:after { display: none; }
+
+  .gallery-fullscreen {
+    line-height: 2.5em;
+
+    &:after { display: none; }
+    &, &[data-caption] { padding-bottom: 3.5em; }
+  }
+
+  .gallery-item { @include opacity-gallery-item-transition; }
+}
+
+@media #{$smallScreen} {
+  .gallery-list,
+  .gallery-noscript > .gallery-item {
+    font-size: .5em;
+  }
+
+  .gallery-fullscreen .gallery-item:before { top: 20%; }
+}
+
+.noscript .gallery-item:first-child { display: block; }
+.gallery-noscript { font-size: .875em; }

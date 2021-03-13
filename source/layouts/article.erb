@@ -1,0 +1,14 @@
+<% wrap_layout :layout do %>
+  <article>
+    <h1><%= current_page.data.heading || current_page.title %></h1>
+    <%= yield %>
+    <time datetime="<%= current_page.date.strftime '%F' %>" pudate="true" class="article-time">
+      Published on <%= current_page.date.strftime '%B %-d, %Y' %>
+    </time>
+    <div class="pagination">
+      <%= link_to 'Previous Article', current_page.article_previous, title: current_page.article_previous.title, class: 'prev' if current_page.article_previous %>
+      <%= link_to 'Index', '/articles.html', rel: 'index' %>
+      <%= link_to 'Next Article', current_page.article_next, title: current_page.article_next.title, class: 'next' if current_page.article_next %>
+    </div>
+  </article>
+<% end %>
