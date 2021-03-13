@@ -28,6 +28,4 @@ configure :build do
   activate :minify_javascript
   activate :gzip
   activate :asset_hash, exts: %w(.js .css)
-
-  ignore 'images*'
 end

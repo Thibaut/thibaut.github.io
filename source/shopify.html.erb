@@ -6,10 +6,7 @@
   <title>Thibaut &lt;3 Shopify</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <% if development? %><link href="<%= asset_path :css, :shopify %>" media="all" rel="stylesheet" type="text/css">
-  <% else %><style>
-<%= File.read 'build' + asset_path(:css, :shopify) %><%= "\n" %>
-  </style><% end %>
+  <link href="<%= asset_path :css, :shopify %>" media="all" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
 </head>
 <body class="noscript shopify">
@@ -178,10 +175,7 @@
       </p>
     </div>
   </footer>
-  <% if development? %><script src="<%= asset_path :js, :main %>"></script><% else %>
-  <script>
-    <%= File.read 'build' + asset_path(:js, :main) %>
-  </script><% end %>
+  <script src="<%= asset_path :js, :main %>"></script>
   <% unless development? %><script>
     var _gaq=[['_setAccount','UA-5544833-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

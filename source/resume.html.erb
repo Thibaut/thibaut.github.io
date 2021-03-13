@@ -5,10 +5,7 @@
   <title>Thibaut Courouble&rsquo;s Résumé</title>
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <% if development? %><link href="<%= asset_path :css, :resume %>" media="all" rel="stylesheet" type="text/css">
-  <% else %><style>
-<%= File.read 'build' + asset_path(:css, :resume) %><%= "\n" %>
-  </style><% end %>
+  <link href="<%= asset_path :css, :resume %>" media="all" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
 </head>
 <body class="resume">
