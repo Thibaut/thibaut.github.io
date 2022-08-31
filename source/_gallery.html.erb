@@ -1,8 +1,10 @@
 <div class="gallery">
   <div class="gallery-list">
-    <% link_to asset_path(:images, "projects/#{folder}/#{names.first}.png"), class: 'gallery-item' do %>
+    <% link_to asset_path(:images, "projects/#{folder}/#{names.first}#{"@2x" if defined?(hidpi_only)}.png"), class: 'gallery-item' do %>
       <%- if defined?(hidpi) -%>
         <img src="<%= asset_path(:images, "projects/#{folder}/#{names.first}.png") %>" class="gallery-image" srcset="<%= asset_path(:images, "projects/#{folder}/#{names.first}.png") %> 1x, <%= asset_path(:images, "projects/#{folder}/#{names.first}@2x.png") %> 2x">
+      <%- elsif defined?(hidpi_only) -%>
+        <img src="<%= asset_path(:images, "projects/#{folder}/#{names.first}@2x.png") %>" class="gallery-image" srcset="<%= asset_path(:images, "projects/#{folder}/#{names.first}@2x.png") %> 1x, <%= asset_path(:images, "projects/#{folder}/#{names.first}@2x.png") %> 2x">
       <%- else -%>
         <img src="<%= asset_path(:images, "projects/#{folder}/#{names.first}.png") %>" class="gallery-image">
       <%- end -%>
@@ -10,6 +12,8 @@
     <%- names[1..names.length].each do |name| -%>
       <%- if defined?(hidpi) -%>
         <div class="gallery-item" data-src="<%= asset_path :images, "projects/#{folder}/#{name}.png" %>" data-srcset="<%= asset_path(:images, "projects/#{folder}/#{name}.png") %> 1x, <%= asset_path(:images, "projects/#{folder}/#{name}@2x.png") %> 2x"></div>
+      <%- elsif defined?(hidpi_only) -%>
+        <div class="gallery-item" data-src="<%= asset_path :images, "projects/#{folder}/#{name}@2x.png" %>" data-srcset="<%= asset_path(:images, "projects/#{folder}/#{name}@2x.png") %> 1x, <%= asset_path(:images, "projects/#{folder}/#{name}@2x.png") %> 2x"></div>
       <%- else -%>
         <div class="gallery-item" data-src="<%= asset_path :images, "projects/#{folder}/#{name}.png" %>"></div>
       <%- end -%>

@@ -8,7 +8,7 @@
   <% if current_path == 'index.html' %><meta name="description" content="Hi — I'm Thibaut. I'm a French web developer who specialize in Ruby, JavaScript and HTML5."><% end %>
   <link href="<%= asset_path :css, :main %>" media="all" rel="stylesheet" type="text/css">
   <link rel="canonical" href="<%= data.config.base_url %>/<%= current_path.gsub('index.html', '') %>">
-  <link href="https://feeds.feedburner.com/thibautme" rel="alternate" title="Subscribe" type="application/atom+xml">
+  <link href="/feed.xml" rel="alternate" title="Subscribe" type="application/atom+xml">
   <link rel="icon" type="image/x-icon" href="<%= asset_url 'favicon.ico' %>">
 </head>
 <body class="noscript <%= page_classes %>">
@@ -34,9 +34,9 @@
       <p class="footer-copy">&copy; 2010&ndash;<%= Time.now.year %> Thibaut Courouble</p>
       <p class="footer-links">
         <a href="mailto:thibaut@me.com" class="footer-link">Email</a>
-        <a href="https://twitter.com/tibc" class="footer-link footer-twi">Twitter</a>
         <a href="https://github.com/Thibaut" class="footer-link footer-git">GitHub</a>
-        <a href="https://feeds.feedburner.com/thibautme" class="footer-link footer-rss">RSS</a>
+        <a href="https://twitter.com/tibc" class="footer-link footer-twi">Twitter</a>
+        <a href="/feed.xml" class="footer-link footer-rss">RSS</a>
       </p>
     </div>
   </footer>
