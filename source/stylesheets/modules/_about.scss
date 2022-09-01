@@ -14,8 +14,8 @@
     width: 15em;
     border-radius: 2px;
 
-    @media #{$mediumScreen} { width: 8em; }
-    @media #{$smallScreen} { width: 6em; }
+    @media #{$mediumScreen} { width: 12em; }
+    @media #{$smallScreen} { width: 10em; }
   }
 
   &:after {

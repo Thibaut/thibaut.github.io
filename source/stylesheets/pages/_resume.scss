@@ -1,7 +1,6 @@
 .resume {
   background: white;
 
-  ul { list-style: disc outside; }
   li + li { margin-top: .25em; }
 
   a {
@@ -13,6 +12,12 @@
       text-decoration: underline;
     }
   }
+
+  .row { max-width: 45em; }
+}
+
+.resume-skills {
+  list-style: disc outside;
 }
 
 .resume-header {
@@ -52,7 +57,7 @@
   line-height: 1.75em;
   padding: .25em 0;
   page-break-before: always;
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 
   > .resume-title { font-size: 1em; }
 
@@ -74,6 +79,7 @@
 
   > li {
     margin: 0;
+    overflow: auto;
 
     + li { margin-top: .75em; }
     > p { margin-bottom: 0; }
@@ -82,10 +88,17 @@
 
 .timeline-date {
   float: left;
-  max-width: 8rem;
+  max-width: 8.5rem;
   color: $textColorLight;
 
-  ~ p { margin-left: 9rem; }
+  ~ * { margin-left: 9rem; }
+}
+
+.timeline--sub {
+  margin-top: 0;
+  font-size: .875em;
+
+  > li + li { margin-top: .5em; }
 }
 
 .timeline-note {
@@ -93,13 +106,22 @@
   color: $textColorLight;
 }
 
+.timeline-note--strong {
+  color: $textColor;
+}
+
 @media screen and #{$mediumScreen} {
   html { font-size: .9375em; }
   .resume ul { list-style: none; }
 
   .resume-header {
-    margin-bottom: 2em;
-    padding: .5em 0;
+    line-height: 1.625em;
+    padding-top: .75em;
+  }
+
+  .resume-title > small {
+    display: block;
+    margin-left: 0;
   }
 
   .resume-title { font-size: 1.25em; }
@@ -119,12 +141,12 @@
     margin-left: 0;
   }
 
-  .timeline-date { max-width: 7rem; }
-  .timeline-date ~ p { margin-left: 7.5rem; }
+  .timeline-date { max-width: 6.5rem; }
+  .timeline-date ~ * { margin-left: 7rem; }
 }
 
 @media print {
-  html { font-size: 12pt; }
+  html { font-size: 11pt; }
   .resume-page-header { display: block; }
   .resume-date { display: none; }
 }
